@@ -1,0 +1,40 @@
+/* font for headers */
+@font-face {
+    font-family: 'Lato'; 
+    src: url(fonts/Lato/Lato-Black.ttf);
+}
+/* font for regular text */
+@font-face {
+    font-family: 'Merriweather'; 
+    src: url(fonts/Merriweather/Merriweather-Regular.ttf);
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+}
+
+p {
+    font-family: 'Merriweather', serif;
+}
+
+/* navigation bar style */
+.navbar {
+    background: #A8D5BA;
+}
+.nav-link, .navbar-brand {
+    color: #1B5E3A;
+    cursor: pointer;
+}
+.nav-link {
+    margin-right: 1em; 
+}
+.nav-link:hover {
+    background: #6BBF8A;
+    color: #2E7D5C;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+.navbar-toggler {
+    background: #fff;
+}
