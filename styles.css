@@ -29,14 +29,16 @@ pre,
 }
 #technologies,
 #testimonials,
-#mission {
+#mission,
+#contacts {
   background-color: #a8d5ba;
   padding: 20px 0;
 }
 #partners,
 #values,
 #eco-technologies,
-#programsForKids {
+#programsForKids,
+#newsletter {
   background-color: #fff;
   padding: 20px 0;
 }
@@ -173,6 +175,60 @@ pre,
 .programs .btn {
   background: #1b5e3a;
 }
+/* contacts */
+.contact-block {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.contact-info {
+  background: #fff;
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+}
+.contact-title {
+  padding-left: 5px;
+}
+.contact-col {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-left: 10px;
+}
+.contact-map {
+  grid-column: 2/5;
+}
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+}
+.social {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 5px;
+}
+.social svg,
+a {
+  cursor: pointer;
+}
+/* newsletter */
+.single {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.form-control {
+  border-color: transparent;
+  border-radius: 20px 0 0 20px;
+}
+.btn {
+  min-height: 50px;
+  border-radius: 0 20px 20px 0;
+}
+/* small devices */
 @media (max-width: 768px) {
   .content {
     background-color: #4b9b6e;
@@ -187,5 +243,22 @@ pre,
   .programs {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* medium devices */
+@media (max-width: 992px) {
+  .contact-block {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .contact-map {
+    grid-column: span 1;
+  }
+  .contact-info {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ourlocation {
+    margin-top: 3rem;
   }
 }
