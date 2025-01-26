@@ -14,17 +14,30 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.card-title {
   font-family: "Lato", sans-serif;
   color: #1b5e3a;
 }
 
 p,
-pre {
+pre,
+.card-text {
   font-family: "Merriweather", serif;
   text-align: left;
 }
-
+#technologies,
+#programsForKids,
+#mission {
+  background-color: #a8d5ba;
+  padding: 20px 0;
+}
+#partners,
+#values,
+#eco-technologies {
+  background-color: #fff;
+  padding: 20px 0;
+}
 /* navigation bar style */
 .navbar {
   background: #2e7d5c;
@@ -104,7 +117,17 @@ pre {
   padding: 20px;
   border-radius: 12px;
 }
-.btn {
+
+.programs {
+  display: flex;
+  justify-content: space-between;
+}
+.program {
+  width: 50%;
+  color: #2e7d5c;
+  text-align: left;
+}
+.programs .btn {
   background: #1b5e3a;
 }
 @media (max-width: 768px) {
