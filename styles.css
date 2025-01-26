@@ -25,16 +25,18 @@ pre,
 .card-text {
   font-family: "Merriweather", serif;
   text-align: left;
+  line-height: 1.8;
 }
 #technologies,
-#programsForKids,
+#testimonials,
 #mission {
   background-color: #a8d5ba;
   padding: 20px 0;
 }
 #partners,
 #values,
-#eco-technologies {
+#eco-technologies,
+#programsForKids {
   background-color: #fff;
   padding: 20px 0;
 }
@@ -100,6 +102,8 @@ pre,
   flex-wrap: wrap;
 }
 .chain-of-cards-item {
+  display: flex;
+  flex: 1;
   justify-content: space-evenly;
 }
 .mission {
@@ -117,13 +121,52 @@ pre,
   padding: 20px;
   border-radius: 12px;
 }
+/* tetinomials */
+.testimonial-card {
+  background: #1b5e3a;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
 
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.carousel-indicators {
+  bottom: -3rem;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.patient-name,
+.patient-disease {
+  color: #fff;
+  text-align: center;
+}
+
+/* programs */
 .programs {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 .program {
-  width: 50%;
   color: #2e7d5c;
   text-align: left;
 }
@@ -138,9 +181,11 @@ pre,
     width: 100%;
   }
   .infographic {
-    display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
+  }
+  .programs {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
