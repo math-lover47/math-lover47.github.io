@@ -1,40 +1,123 @@
 /* font for headers */
 @font-face {
-    font-family: 'Lato'; 
-    src: url(fonts/Lato/Lato-Black.ttf);
+  font-family: "Lato";
+  src: url(fonts/Lato/Lato-Black.ttf);
 }
 /* font for regular text */
 @font-face {
-    font-family: 'Merriweather'; 
-    src: url(fonts/Merriweather/Merriweather-Regular.ttf);
+  font-family: "Merriweather";
+  src: url(fonts/Merriweather/Merriweather-Regular.ttf);
 }
 
-h1 {
-    font-family: 'Lato', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+  color: #1b5e3a;
 }
 
-p {
-    font-family: 'Merriweather', serif;
+p,
+pre {
+  font-family: "Merriweather", serif;
+  text-align: left;
 }
 
 /* navigation bar style */
 .navbar {
-    background: #A8D5BA;
+  background: #2e7d5c;
 }
-.nav-link, .navbar-brand {
-    color: #1B5E3A;
-    cursor: pointer;
+.logo {
+  display: flex;
+  justify-content: flex-start;
+}
+.logo p {
+  width: 70%;
+  color: #fff;
 }
 .nav-link {
-    margin-right: 1em; 
+  color: #fff;
+  cursor: pointer;
+}
+.navbar-brand img {
+  cursor: pointer;
+}
+.nav-link {
+  padding-left: 5px;
 }
 .nav-link:hover {
-    background: #6BBF8A;
-    color: #2E7D5C;
+  color: #a8d5ba;
 }
 .navbar-collapse {
-    justify-content: flex-end;
+  /* display: flex; */
+  justify-content: space-evenly;
 }
-.navbar-toggler {
-    background: #fff;
+
+/* landing page style */
+.landing-page {
+  height: 112vh;
+  background: #000;
+}
+#myBanner {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  height: 112vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content {
+  align-content: center;
+  position: absolute;
+  width: 100%;
+  height: 112vh;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.banner-content {
+  width: 50%;
+  padding-left: 0;
+}
+
+.chain-of-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.chain-of-cards-item {
+  justify-content: space-evenly;
+}
+.mission {
+  font-size: 1.3rem;
+  color: #000;
+}
+.infographic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.infographic-item {
+  background: #a8d5ba;
+  padding: 20px;
+  border-radius: 12px;
+}
+.btn {
+  background: #1b5e3a;
+}
+@media (max-width: 768px) {
+  .content {
+    background-color: #4b9b6e;
+  }
+  .banner-content {
+    width: 100%;
+  }
+  .infographic {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
 }
