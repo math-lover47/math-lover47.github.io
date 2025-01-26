@@ -1,264 +1,220 @@
 /* font for headers */
 @font-face {
-  font-family: "Lato";
-  src: url(fonts/Lato/Lato-Black.ttf);
-}
-/* font for regular text */
-@font-face {
-  font-family: "Merriweather";
-  src: url(fonts/Merriweather/Merriweather-Regular.ttf);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.card-title {
-  font-family: "Lato", sans-serif;
-  color: #1b5e3a;
-}
-
-p,
-pre,
-.card-text {
-  font-family: "Merriweather", serif;
-  text-align: left;
-  line-height: 1.8;
-}
-#technologies,
-#testimonials,
-#mission,
-#contacts {
-  background-color: #a8d5ba;
-  padding: 20px 0;
-}
-#partners,
-#values,
-#eco-technologies,
-#programsForKids,
-#newsletter {
-  background-color: #fff;
-  padding: 20px 0;
-}
-/* navigation bar style */
-.navbar {
-  background: #2e7d5c;
-}
-.logo {
-  display: flex;
-  justify-content: flex-start;
-}
-.logo p {
-  width: 70%;
-  color: #fff;
-}
-.nav-link {
-  color: #fff;
-  cursor: pointer;
-}
-.navbar-brand img {
-  cursor: pointer;
-}
-.nav-link {
-  padding-left: 5px;
-}
-.nav-link:hover {
-  color: #a8d5ba;
-}
-.navbar-collapse {
-  /* display: flex; */
-  justify-content: space-evenly;
-}
-
-/* landing page style */
-.landing-page {
-  height: 112vh;
-  background: #000;
-}
-#myBanner {
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  height: 112vh;
-  width: 100%;
-  object-fit: cover;
-}
-
-.content {
-  align-content: center;
-  position: absolute;
-  width: 100%;
-  height: 112vh;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-}
-.banner-content {
-  width: 50%;
-  padding-left: 0;
-}
-
-.chain-of-cards {
-  display: flex;
-  flex-wrap: wrap;
-}
-.chain-of-cards-item {
-  display: flex;
-  flex: 1;
-  justify-content: space-evenly;
-}
-.mission {
-  font-size: 1.3rem;
-  color: #000;
-}
-.infographic {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.infographic-item {
-  background: #a8d5ba;
-  padding: 20px;
-  border-radius: 12px;
-}
-/* tetinomials */
-.testimonial-card {
-  background: #1b5e3a;
-  border-radius: 20px;
-  padding: 2rem;
-  transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-}
-
-.avatar {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.carousel-indicators {
-  bottom: -3rem;
-}
-
-.carousel-indicators .active {
-  opacity: 1;
-}
-
-.testimonial-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #fff;
-}
-
-.patient-name,
-.patient-disease {
-  color: #fff;
-  text-align: center;
-}
-
-/* programs */
-.programs {
-  display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-}
-.program {
-  color: #2e7d5c;
-  text-align: left;
-}
-.programs .btn {
-  background: #1b5e3a;
-}
-/* contacts */
-.contact-block {
-  display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.contact-info {
-  background: #fff;
-  display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(1, 1fr);
-}
-.contact-title {
-  padding-left: 5px;
-}
-.contact-col {
-  display: flex;
-  justify-content: flex-start;
-  gap: 20px;
-  padding-left: 10px;
-}
-.contact-map {
-  grid-column: 2/5;
-}
-.contact-map iframe {
-  width: 100%;
-  height: 100%;
-}
-.social {
-  display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 5px;
-}
-.social svg,
-a {
-  cursor: pointer;
-}
-/* newsletter */
-.single {
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-.form-control {
-  border-color: transparent;
-  border-radius: 20px 0 0 20px;
-}
-.btn {
-  min-height: 50px;
-  border-radius: 0 20px 20px 0;
-}
-/* small devices */
-@media (max-width: 768px) {
+    font-family: "Lato";
+    src: url(fonts/Lato/Lato-Black.ttf);
+  }
+  
+  /* font for regular text */
+  @font-face {
+    font-family: "Merriweather";
+    src: url(fonts/Merriweather/Merriweather-Regular.ttf);
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .card-title {
+    font-family: "Lato", sans-serif;
+    color: #1b5e3a;
+  }
+  
+  p,
+  pre,
+  .card-text {
+    font-family: "Merriweather", serif;
+    text-align: left;
+  }
+  .footer {
+    font-family: "Merriweather";
+    background-color: #1b5e3a;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+  .contact-info a {
+    text-decoration: none;
+    color: #00ff6a;
+  }
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #ffffff;
+  }
+  #technologies,
+  #programsForKids,
+  #services,
+  #mission {
+    background-color: #a8d5ba;
+    padding: 20px 0;
+  }
+  #partners,
+  #values,
+  #AboutUs,
+  #eco-technologies {
+    background-color: #fff;
+    padding: 20px 0;
+  }
+  #services {
+    display: flex;
+    justify-content: space-evenly;
+    /* space between cards */
+    gap: 20px; 
+    align-items: center;
+    /* Remove line breaks to ensure the cards are arranged in a single row */
+    flex-wrap: nowrap; 
+    overflow-x: auto;
+  }
+  
+  .card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  .card img{
+    width: 100px; 
+    height: 100px;
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+  }
+  
+  
+  .galleryCarousel {
+    justify-content: space-evenly;
+  }
+  /* navigation bar style */
+  .navbar {
+    background: #2e7d5c;
+  }
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .logo p {
+    width: 70%;
+    color: #fff;
+  }
+  .nav-link {
+    color: #fff;
+    cursor: pointer;
+  }
+  .navbar-brand img {
+    cursor: pointer;
+  }
+  .nav-link {
+    padding-left: 5px;
+  }
+  .nav-link:hover {
+    color: #a8d5ba;
+  }
+  .navbar-collapse {
+    /* display: flex; */
+    justify-content: space-evenly;
+  }
+  
+  /* landing page style */
+  .landing-page {
+    height: 112vh;
+    background: #000;
+  }
+  #myBanner {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    height: 112vh;
+    width: 100%;
+    object-fit: cover;
+  }
+  
   .content {
-    background-color: #4b9b6e;
+    align-content: center;
+    position: absolute;
+    width: 100%;
+    height: 112vh;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
   }
   .banner-content {
-    width: 100%;
+    width: 50%;
+    padding-left: 0;
+  }
+  
+  .chain-of-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .chain-of-cards-item {
+    justify-content: space-evenly;
+  }
+  
+  .mission {
+    font-size: 1.3rem;
+    color: #000;
   }
   .infographic {
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(1, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
+  
+  .infographic-item {
+    background: #a8d5ba;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
   .programs {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    justify-content: space-between;
   }
-}
-/* medium devices */
-@media (max-width: 992px) {
-  .contact-block {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(1, 1fr);
+  .program {
+    width: 50%;
+    color: #2e7d5c;
+    text-align: left;
   }
-  .contact-map {
-    grid-column: span 1;
+  .programs .btn {
+    background: #1b5e3a;
   }
-  .contact-info {
-    grid-template-rows: repeat(1, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 768px) {
+    .content {
+      background-color: #4b9b6e;
+    }
+    .banner-content {
+      width: 100%;
+    }
+    .infographic {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
   }
-  .ourlocation {
-    margin-top: 3rem;
-  }
-}
