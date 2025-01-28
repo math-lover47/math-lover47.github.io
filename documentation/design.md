@@ -26,3 +26,4 @@ In surveys made in American, European, and Islamic countries, green is the color
 #1B5E3A
 
 # Wireframes
+(https://www.figma.com/design/eKEZdNUthiRil9kO3EgFGY/My-website-wireframe?node-id=0-1&t=CMQgekVp3ASzu1d4-1)
