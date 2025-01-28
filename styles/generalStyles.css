@@ -1,0 +1,207 @@
+/* font for headers */
+@font-face {
+  font-family: "Lato";
+  src: url(fonts/Lato/Lato-Black.ttf);
+}
+/* font for regular text */
+@font-face {
+  font-family: "Merriweather";
+  src: url(fonts/Merriweather/Merriweather-Regular.ttf);
+}
+/* for faq */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-title {
+  font-family: "Lato", sans-serif;
+  color: #1b5e3a;
+}
+
+p,
+pre,
+.card-text {
+  font-family: "Merriweather", serif;
+  text-align: left;
+  line-height: 1.8;
+}
+#technologies,
+#testimonials,
+#mission,
+#contacts,
+#news,
+#AboutUs,
+#services {
+  background-color: #a8d5ba;
+  padding: 20px 0;
+}
+#partners,
+#values,
+#eco-technologies,
+#programsForKids,
+#newsletter,
+#timeline {
+  background-color: #fff;
+  padding: 20px 0;
+}
+/* footer */
+.footer {
+  font-family: "Merriweather";
+  background-color: #1b5e3a;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+.contact-info a {
+  text-decoration: none;
+  color: #00ff6a;
+}
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* navigation bar style */
+.navbar {
+  background: #2e7d5c;
+}
+.logo {
+  display: flex;
+  justify-content: flex-start;
+}
+.logo p {
+  width: 70%;
+  color: #fff;
+}
+.nav-link {
+  color: #fff;
+  cursor: pointer;
+}
+.navbar-brand img {
+  cursor: pointer;
+}
+.nav-link {
+  padding-left: 5px;
+}
+.nav-link:hover {
+  color: #a8d5ba;
+}
+.navbar-collapse {
+  /* display: flex; */
+  justify-content: space-evenly;
+}
+
+.chain-of-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.chain-of-cards-item {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+/* small devices */
+@media (max-width: 768px) {
+  .content {
+    align-content: center;
+    position: absolute;
+    width: 100%;
+    height: 112vh;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  .banner-content {
+    width: 50%;
+    padding-left: 0;
+  }
+
+  .chain-of-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .chain-of-cards-item {
+    justify-content: space-evenly;
+  }
+
+  .mission {
+    font-size: 1.3rem;
+    color: #000;
+  }
+  .infographic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .infographic-item {
+    background: #a8d5ba;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .programs {
+    display: flex;
+    justify-content: space-between;
+  }
+  /* Place the timelime to the left */
+  #timeline::after {
+    left: 27px;
+  }
+
+  /* Full-width containers */
+  .timeline-container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline-container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+/* medium devices */
+@media (max-width: 992px) {
+  .contact-block {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .programs .btn {
+    background: #1b5e3a;
+  }
+  @media (max-width: 768px) {
+    .content {
+      background-color: #4b9b6e;
+    }
+    .banner-content {
+      width: 100%;
+    }
+    .infographic {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
+  }
+}
