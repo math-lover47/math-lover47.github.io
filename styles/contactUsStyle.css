@@ -4,6 +4,45 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+.faq.active {
+  border: none;
+}
+.accordion {
+  background: #fff;
+  color: #1b5e3a;
+  cursor: pointer;
+  font-size: 2rem;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+}
+.active,
+.accordion:hover {
+  background-color: #f6f6f6;
+}
+.faq button {
+  opacity: 0.8;
+}
+.panel {
+  padding: 0 2rem;
+  background-color: #f6f6f6;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  display: none;
+  overflow: hidden;
+}
+.accordion i {
+  font-size: 1rem;
+  padding: 1rem;
 }
 /* newsletter */
 .single {

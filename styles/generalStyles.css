@@ -20,6 +20,7 @@ h6,
 .card-title {
   font-family: "Lato", sans-serif;
   color: #1b5e3a;
+  letter-spacing: 3px;
 }
 
 p,
@@ -27,7 +28,8 @@ pre,
 .card-text {
   font-family: "Merriweather", serif;
   text-align: left;
-  line-height: 1.8;
+  letter-spacing: 1px;
+  line-height: 1.8rem;
 }
 #technologies,
 #testimonials,
@@ -69,11 +71,14 @@ pre,
 
 /* navigation bar style */
 .navbar {
-  background: #2e7d5c;
+  background: #008000;
 }
 .logo {
   display: flex;
   justify-content: flex-start;
+}
+.logo img {
+  cursor: pointer;
 }
 .logo p {
   width: 70%;
@@ -81,9 +86,6 @@ pre,
 }
 .nav-link {
   color: #fff;
-  cursor: pointer;
-}
-.navbar-brand img {
   cursor: pointer;
 }
 .nav-link {
