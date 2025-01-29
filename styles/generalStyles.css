@@ -35,11 +35,8 @@ pre,
 #technologies,
 #testimonials,
 #mission,
-#contacts,
-#news,
-#AboutUs,
 #services {
-  background-color: #a8d5ba;
+  background-color: #acf2b1;
   padding: 20px 0;
 }
 
@@ -48,7 +45,9 @@ pre,
 #eco-technologies,
 #programsForKids,
 #newsletter,
-#timeline {
+#contacts,
+#news,
+#AboutUs {
   background-color: #fff;
   padding: 20px 0;
 }
@@ -174,7 +173,7 @@ footer a:hover {
   }
 
   .infographic-item {
-    background: #a8d5ba;
+    background: #acf2b1;
     padding: 20px;
     border-radius: 12px;
   }
