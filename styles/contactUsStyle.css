@@ -10,7 +10,7 @@
 .faq.active {
   border: none;
 }
-.accordion {
+.collapsible {
   background: #fff;
   color: #1b5e3a;
   cursor: pointer;
@@ -25,7 +25,7 @@
   align-items: center;
 }
 .active,
-.accordion:hover {
+.collapsible:hover {
   background-color: #f6f6f6;
 }
 .faq button {
@@ -40,7 +40,7 @@
   display: none;
   overflow: hidden;
 }
-.accordion i {
+.collapsible i {
   font-size: 1rem;
   padding: 1rem;
 }

@@ -21,6 +21,7 @@ h6,
   font-family: "Lato", sans-serif;
   color: #1b5e3a;
   letter-spacing: 3px;
+  font-weight: bolder;
 }
 
 p,
@@ -41,6 +42,7 @@ pre,
   background-color: #a8d5ba;
   padding: 20px 0;
 }
+
 #partners,
 #values,
 #eco-technologies,
@@ -108,9 +110,38 @@ pre,
   flex: 1;
   justify-content: space-evenly;
 }
-
+/* footer */
+footer {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+footer a {
+  text-decoration: none;
+  color: #000;
+}
+footer a:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+.footer-social {
+  display: flex;
+  justify-items: flex-start;
+  gap: 30px;
+}
+.footer-social i {
+  cursor: pointer;
+}
 /* small devices */
 @media (max-width: 768px) {
+  footer {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
   .content {
     align-content: center;
     position: absolute;
