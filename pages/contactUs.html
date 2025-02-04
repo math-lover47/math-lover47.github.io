@@ -159,6 +159,67 @@
         </div>
       </div>
     </div>
+    <!-- form -->
+    <section class="container py-5">
+      <div class="row justify-content-center">
+        <div class="w-100">
+          <h2 class="text-center mb-4">Contact Us</h2>
+
+          <form action="">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                required
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input
+                type="text"
+                class="form-control"
+                id="subject"
+                name="subject"
+                required
+                placeholder="Enter subject"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Enter your message"
+              ></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg mb-5">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- newsletter -->
     <div id="newsletter" style="margin-top: 4rem">
       <div class="container text-center fw-bold">
@@ -184,11 +245,11 @@
       </div>
     </div>
     <!-- footer -->
-     <div style="background-color: #008000" class="pt-5">
+    <div style="background-color: #008000" class="pt-5">
       <div class="container">
         <footer>
           <div class="footer-about-clinic">
-            <h5 style="color:#fff ;">About Clinic</h5>
+            <h5 style="color: #fff">About Clinic</h5>
             <ul class="footer-list">
               <li><a href="aboutUs.html">About us</a></li>
               <li><a href="#">link</a></li>
@@ -199,7 +260,7 @@
             </ul>
           </div>
           <div class="footer-rehab">
-            <h5 style="color:#fff ;">Services</h5>
+            <h5 style="color: #fff">Services</h5>
             <ul class="footer-list">
               <li><a href="services.html">Services</a></li>
               <li><a href="#">link</a></li>
@@ -210,7 +271,7 @@
             </ul>
           </div>
           <div class="footer-to-patients">
-            <h5 style="color:#fff ;">To patients</h5>
+            <h5 style="color: #fff">To patients</h5>
             <ul class="footer-list">
               <li><a href="blog.html">News</a></li>
               <li><a href="#">link</a></li>
@@ -229,7 +290,7 @@
               </h5>
             </div>
             <div class="footer-phone">
-              <h5 style="color:#fff ;">Contacts</h5>
+              <h5 style="color: #fff">Contacts</h5>
               <p>
                 <a href="#">+7 705 296 XX XX</a>
                 <br />
@@ -237,7 +298,7 @@
               </p>
             </div>
             <div class="footer-email">
-              <h5 style="color:#fff ;">Email</h5>
+              <h5 style="color: #fff">Email</h5>
               <p><a href="#">info@med.kz</a></p>
             </div>
             <div class="footer-social">
@@ -278,5 +339,6 @@
         });
       }
     </script>
+    <script src="../scripts/contactUsScript.js"></script>
   </body>
 </html>

@@ -1,1 +1,142 @@
 /* services */
+.add-to-cart {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+#cart-list {
+  list-style: none;
+  padding: 0;
+}
+#cart-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f9f9f9;
+}
+.paragraph {
+  margin: 0;
+}
+#buy-now {
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.add-to-cart.remove-btn {
+  background-color: #f44336;
+}
+/* faq */
+.faq {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+.faq.active {
+  border: none;
+}
+.collapsible {
+  background: #fff;
+  color: #1b5e3a;
+  cursor: pointer;
+  font-size: 2rem;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+}
+.active,
+.collapsible:hover {
+  background-color: #f6f6f6;
+}
+.faq button {
+  opacity: 0.8;
+}
+.panel {
+  padding: 0 2rem;
+  background-color: #f6f6f6;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  display: none;
+  overflow: hidden;
+}
+.collapsible i {
+  font-size: 1rem;
+  padding: 1rem;
+}
+/* newsletter */
+.single {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.form-control {
+  border-color: transparent;
+  border-radius: 20px 0 0 20px;
+}
+/* Previous styles remain the same */
+.container {
+  margin: 5rem auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* search styles */
+.search-container {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 10px;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.no-results {
+  display: none;
+  padding: 20px;
+  text-align: center;
+  background-color: #f8d7da;
+  color: #721c24;
+  margin: 10px 0;
+  border-radius: 4px;
+}
