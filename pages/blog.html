@@ -20,17 +20,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <!-- navbar with link to: -->
@@ -204,12 +193,74 @@
         </div>
       </div>
     </div>
+
+    <!-- CALORIES CALCULATOR -->
+    <div id="caloriesCalculator">
+      <div class="container text-center">
+        <h1>Burned Calories Calculator</h1>
+        <form id="caloriesForm">
+          <div class="my-3">
+            <label for="distance" class="form-label">Distance walked(km)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="distance"
+              step="0.1"
+              value="0"
+            />
+          </div>
+          <div class="my-3">
+            <label for="food" class="form-label">Food Consumed</label>
+            <select class="form-select" id="food" required>
+              <option value="">Select food item</option>
+              <option value="600">Beshbarmak (350g) - 600 cal</option>
+              <option value="400">Kazy (100g) - 400 cal</option>
+              <option value="550">Kuurdak (300g) - 550 cal</option>
+              <option value="450">Baursak (150g) - 450 cal</option>
+              <option value="450">Shelpek (150g) - 450 cal</option>
+              <option value="500">Manty (250g) - 500 cal</option>
+              <option value="460">Samsa (180g) - 460 cal</option>
+              <option value="250">Sorpa (250g) - 250 cal</option>
+              <option value="200">Kurt (50g) - 200 cal</option>
+              <option value="200">Kymyz (0.5l) - 300 cal</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">Calculate</button>
+        </form>
+
+        <div id="results" class="my-4 d-none">
+          <h1>Results</h1>
+          <div class="my-3">
+            <p>Calories consumed: <span id="caloriesConsumed">0</span></p>
+            <p>
+              Calories burned from walking: <span id="burnedCalories">0</span>
+            </p>
+            <p>
+              Additional walking needed:
+              <span id="additionalWalking">0</span> km
+            </p>
+          </div>
+          <div class="progress" style="height: 25px">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated"
+              role="progressbar"
+              style="width: 0%"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              0%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- footer -->
-     <div style="background-color: #008000" class="pt-5">
+    <div style="background-color: #008000" class="pt-5">
       <div class="container">
         <footer>
           <div class="footer-about-clinic">
-            <h5 style="color:#fff ;">About Clinic</h5>
+            <h5 style="color: #fff">About Clinic</h5>
             <ul class="footer-list">
               <li><a href="aboutUs.html">About us</a></li>
               <li><a href="#">link</a></li>
@@ -220,7 +271,7 @@
             </ul>
           </div>
           <div class="footer-rehab">
-            <h5 style="color:#fff ;">Services</h5>
+            <h5 style="color: #fff">Services</h5>
             <ul class="footer-list">
               <li><a href="services.html">Services</a></li>
               <li><a href="#">link</a></li>
@@ -231,7 +282,7 @@
             </ul>
           </div>
           <div class="footer-to-patients">
-            <h5 style="color:#fff ;">To patients</h5>
+            <h5 style="color: #fff">To patients</h5>
             <ul class="footer-list">
               <li><a href="blog.html">News</a></li>
               <li><a href="#">link</a></li>
@@ -250,7 +301,7 @@
               </h5>
             </div>
             <div class="footer-phone">
-              <h5 style="color:#fff ;">Contacts</h5>
+              <h5 style="color: #fff">Contacts</h5>
               <p>
                 <a href="#">+7 705 296 XX XX</a>
                 <br />
@@ -258,7 +309,7 @@
               </p>
             </div>
             <div class="footer-email">
-              <h5 style="color:#fff ;">Email</h5>
+              <h5 style="color: #fff">Email</h5>
               <p><a href="#">info@med.kz</a></p>
             </div>
             <div class="footer-social">
@@ -281,5 +332,17 @@
         Authors: Arsen, Angelina <br />Group: MCS-2301
       </div>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../scripts/blogScript.js"></script>
   </body>
 </html>

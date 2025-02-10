@@ -1,124 +1,147 @@
-class Person {
-  static Amount = 0;
-  static personsArray = []; // Array to store valid person objects
+const existingEmails = [];
+$(document).ready(function () {
+  $("#registrationForm").on("submit", (element) => {
+    element.preventDefault();
 
-  constructor(name, email, subject, message) {
-    if (!this.validateFields(name, email, subject, message)) {
-      throw new Error("Invalid input");
-    }
-    this._name = name;
-    this._email = email;
-    this._subject = subject;
-    this._message = message;
-    Person.Amount++;
-    Person.personsArray.push(this);
-  }
+    $(".error").hide();
 
-  validateFields(name, email, subject, message) {
-    if (/\d/.test(name)) {
-      alert("Name cannot contain numbers.");
-      return false;
-    }
-    if (
-      email.indexOf("gmail.com") === -1 &&
-      email.indexOf("mail.ru") === -1 &&
-      email.indexOf("yandex.ru") === -1
-    ) {
-      alert("Currently we support only gmail.com/mail.ru/yandex.ru.");
-      return false;
-    }
-    if (/\d/.test(subject)) {
-      alert("Subject cannot contain numbers.");
-      return false;
-    }
-    if (message.split(" ").length > 255) {
-      alert("Message cannot exceed 255 words.");
-      return false;
-    }
-    return true;
-  }
+    let isValid = true;
 
-  static displayGeneralInformation(displaySection) {
-    displaySection.innerHTML = `<h3>General Information:</h3>`;
-    displaySection.innerHTML += `<p><strong>Amount of users:</strong> ${Person.Amount}</p>`;
-    displaySection.innerHTML += `<h4>Users List:</h4>`;
-
-    // Using a for loop
-    for (let i = 0; i < Person.personsArray.length; i++) {
-      if (i == 5) {
+    // name validation
+    const name = $("#name").val();
+    const nameRegex = /\d/;
+    switch (true) {
+      case name.length < 2:
+        $("#nameError").text("Name must be at least 2 characters long").show();
+        isValid = false;
         break;
-      }
-      // Iterable
-      let lowercaseName = "";
-      for (const x of String(Person.personsArray[i]._name)) {
-        lowercaseName += x.toLocaleLowerCase();
-      }
-      displaySection.innerHTML += `<p><strong>For Loop:</strong> ${lowercaseName}</p>`;
-    }
-    // Using a while loop
-    let j = 5;
-    while (j < Person.personsArray.length) {
-      displaySection.innerHTML += `<p><strong>While Loop:</strong> ${Person.personsArray[j]._name}</p>`;
-      j++;
+      case name.length > 25:
+        $("#nameError")
+          .text("Name can contain maximum 25 characters long")
+          .show();
+        isValid = false;
+        break;
+      case nameRegex.test(name):
+        $("#nameError").text("Name can't contain nums").show();
+        isValid = false;
+        break;
     }
 
-    // Using a for-in loop
-    for (let index in Person.personsArray) {
-      displaySection.innerHTML += `<p><strong>For-In Loop:</strong> ${Person.personsArray[index]._name}</p>`;
+    // email validation
+    const email = $("#email").val();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    switch (true) {
+      case !emailRegex.test(email):
+        $("#emailError").text("Please enter valid email address").show();
+        isValid = false;
+        break;
+      case existingEmails.includes(email):
+        $("#emailError")
+          .text("This email address is already registered")
+          .show();
+        isValid = false;
+        break;
     }
 
-    // Using a for-of loop
-    for (let person of Person.personsArray) {
-      displaySection.innerHTML += `<p><strong>For-Of Loop:</strong> ${person._name}</p>`;
+    // password validation
+    const password = $("#password").val();
+    switch (true) {
+      case password.length < 8:
+        $("#passwordError")
+          .text("Password must contain at least 8 characters")
+          .show();
+        isValid = false;
+        break;
+      case password.length > 25:
+        $("#passwordError")
+          .text("Password must contain maximum 25 characters")
+          .show();
+        isValid = false;
+        break;
     }
-  }
 
-  displayPersonInformation(form, displaySection) {
-    displaySection.innerHTML = `
-      <h3>Submitted Information:</h3>
-      <p><strong>Full Name:</strong> ${this._name}</p>
-      <p><strong>Email:</strong> ${this._email}</p>
-      <p><strong>Subject:</strong> ${this._subject}</p>
-      <p><strong>Message:</strong> ${this._message}</p>
-      <p><strong>Created:</strong> ${new Date().toLocaleDateString()}</p>
-    `;
-    form.reset();
-  }
-}
+    // phone number validation
+    const phone = $("#phone").val();
+    const phoneRegex = /^\d{11}$/;
+    switch (true) {
+      case !phoneRegex.test(phone):
+        $("#phoneError")
+          .text("Please enter a valid 11-digit phone number")
+          .show();
+        isValid = false;
+        break;
+      case phone[0] !== "8":
+        $("#phoneError").text("Must start from 8").show();
+        isValid = false;
+        break;
+    }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
-  const displaySection1 = document.createElement("div");
-  const displaySection2 = document.createElement("div");
+    // birthday validation
+    const birthday = new Date($("#birthday").val());
+    const today = new Date();
+    const age = today.getFullYear - birthday.getFullYear;
 
-  displaySection1.classList.add("container", "mt-4");
-  form.parentNode.appendChild(displaySection1);
+    switch (true) {
+      case !$("#birthday").val():
+        $("#birthdayError").text("Please enter all fields").show();
+        isValid = false;
+        break;
+      case age < 0:
+        $("#birthdayError").text("You are born in future!").show();
+        isValid = false;
+        break;
+      case age < 18:
+        $("#birthdayError").text("You must be at least 18 years old!").show();
+        isValid = false;
+        break;
+      case age > 120:
+        $("#birthdayError").text("You are too old!").show();
+        isValid = false;
+        break;
+    }
 
-  displaySection2.classList.add("container", "mt-4");
-  form.parentNode.appendChild(displaySection2);
+    const selectedError = $("#errorType").val();
+    switch (selectedError) {
+      case "name":
+        $("#nameError").text("Invalid name chosen").show();
+        isValid = false;
+        break;
+      case "phone":
+        $("#phoneError").text("Invalid phone number chosen").show();
+        isValid = false;
+        break;
+      case "password":
+        $("#passwordError").text("Invalid password chosen").show();
+        isValid = false;
+        break;
+      case "email":
+        $("#emailError").text("Invalid email chosen").show();
+        isValid = false;
+        break;
+      case "age":
+        $("#ageError").text("Invalid age chosen").show();
+        isValid = false;
+        break;
+      case "none":
+        break;
+    }
+    if (isValid) {
+      existingEmails.push(email);
+      console.log(existingEmails);
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
-
-    try {
-      const person = new Person(name, email, subject, message);
-      let {
-        destructedname,
-        destructedemail,
-        destructedsubject,
-        destructedmessage,
-      } = person;
-
-      Person.displayGeneralInformation(displaySection1);
-      person.displayPersonInformation(form, displaySection2);
-    } catch (error) {
-      displaySection1.innerHTML = "";
-      displaySection2.innerHTML = "";
+      $(".formContainer").animate(
+        {
+          opacity: 0.5,
+        },
+        300,
+        () => {
+          $(".success-message").fadeIn(500);
+          setTimeout(() => {
+            $(".form-container").animate({ opacity: 1 }, 300);
+            $(".success-message").fadeOut(2000);
+          }, 300);
+        }
+      );
     }
   });
 });

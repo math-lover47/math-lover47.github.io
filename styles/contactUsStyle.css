@@ -50,11 +50,22 @@
   margin: 0 auto;
 }
 
-.form-control {
+#newsletter .formControl {
   border-color: transparent;
   border-radius: 20px 0 0 20px;
 }
 #newsletter .btn {
   min-height: 50px;
   border-radius: 0 20px 20px 0;
+}
+/* form */
+.error {
+  color: #dc3545;
+  font-size: 0.9rem;
+  display: none;
+}
+.success-message {
+  color: #28a745;
+  text-align: center;
+  display: none;
 }

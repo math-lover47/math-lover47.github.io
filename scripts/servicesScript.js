@@ -122,6 +122,10 @@ function sortServicesAlphabetically(servicesArray) {
   // Sort main categories
   servicesArray.sort((a, b) => a.title.localeCompare(b.title));
 
+  // Sort by price
+  // servicesArray.sort((a, b) => a - b); asc
+  // servicesArray.sort((a, b) => b - a); desc
+
   // Sort items within each category
   servicesArray.forEach((category) => {
     category.items.sort((a, b) => a.title.localeCompare(b.title));
@@ -214,11 +218,7 @@ function addCartListeners() {
       const serviceName = serviceButton.parentElement
         .querySelector("p")
         .textContent.trim();
-      const servicePrice = serviceButton.getAttribute("data-price");
-
-      if (typeof servicePrice == String) {
-        servicePrice = Number(servicePrice);
-      }
+      const servicePrice = parseInt(serviceButton.getAttribute("data-price"));
 
       // Create a new list item in the cart.
       const cartList = document.getElementById("cart-list");
@@ -347,39 +347,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // "Buy Now" functionality remains unchanged.
   let totalPrice = 0;
+  let finalPrice = 0;
   const cartList = document.getElementById("cart-list");
   const totalPriceElement = document.getElementById("total-price");
+  const finalPriceElement = document.getElementById("final-price");
 
   document.getElementById("buy-now").addEventListener("click", () => {
     totalPrice = parseInt(totalPriceElement.textContent);
+    finalPrice = parseInt(finalPriceElement.textContent);
     if (totalPrice > 0) {
-      const months = new Map([
-        [1, "January"],
-        [2, "February"],
-        [3, "March"],
-        [4, "April"],
-        [5, "May"],
-        [6, "June"],
-        [7, "July"],
-        [8, "August"],
-        [9, "September"],
-        [10, "October"],
-        [11, "November"],
-        [12, "December"],
-      ]);
-      const d = new Date();
-      d.setFullYear(2026);
-      id = Math.floor(Math.random() * 1000000 + 1);
-      CounsultationIds.add(id);
       alert(
-        `Thank you for your purchase! Total: ${totalPrice.toFixed(2)} tenge
-         You buy it in ${d.getDate()} ${months.get(d.getMonth() + 1)}
-         It's available until ${d.getFullYear()}
-         Counsultation ID - ${id}`
+        `Thank you for your purchase! 
+         Total: ${totalPrice.toFixed(2)} tenge, 
+         Final: ${finalPrice.toFixed(2)} tenge`
       );
       cartList.innerHTML = "";
       totalPrice = 0;
       totalPriceElement.textContent = totalPrice;
+      finalPrice = 0;
+      finalPriceElement.textContent = finalPrice;
 
       // Reset all service buttons back to "Get for ..." after purchase.
       document.querySelectorAll(".add-to-cart").forEach((button) => {
@@ -393,5 +379,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+function calculateCost() {
+  const total = parseInt($("#total-price").text()) || 0;
+  const sessionsAmount = parseInt($("#duration").val()) || 1;
+  const patientType = $("#patientType").val();
+  let discount = 0;
 
-var CounsultationIds = new Set();
+  switch (patientType) {
+    case "under5":
+      discount = 0.5;
+      break;
+    case "under13":
+      discount = 0.3;
+      break;
+    case "teenager":
+    default:
+      discount = 0;
+  }
+
+  const finalPrice = total * (1 - discount) * sessionsAmount;
+  $("#final-price").text(finalPrice.toFixed(2));
+}
+
+// Correct event binding
+$(document).ready(function () {
+  $("#patientType, #duration").on("change input", calculateCost);
+});

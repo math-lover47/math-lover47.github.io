@@ -20,17 +20,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <!-- navbar with link to: -->
@@ -81,7 +70,7 @@
     <!-- Services -->
     <div id="services">
       <div class="container text-center fw-bold" style="margin-top: 5rem">
-        <h1>Services</h1>
+        <h1>Treatment cost calculator</h1>
         <!-- our search btn -->
         <div class="search-container">
           <input
@@ -94,10 +83,32 @@
         <div class="no-results">No services found matching your search.</div>
         <!-- our services -->
         <div id="services-container"></div>
-
         <h2 class="my-5">Cart</h2>
+
         <ul id="cart-list"></ul>
         <p>Total: <span id="total-price">0</span> tenge</p>
+
+        <div class="form-group my-5">
+          <h2>Patient Category:</h2>
+          <select id="patientType" class="form-control">
+            <option value="teenager">Teenager</option>
+            <option value="under13">Under 13(30% discount)</option>
+            <option value="under5">Under 5 (50% discount)</option>
+          </select>
+        </div>
+
+        <div class="form-group my-5">
+          <h2>Duration (amount of sessions):</h2>
+          <input
+            type="number"
+            id="duration"
+            min="1"
+            value="1"
+            class="form-control"
+          />
+        </div>
+        <p>Final Price: <span id="final-price">0</span> tenge</p>
+
         <button id="buy-now">Buy Now</button>
       </div>
     </div>
@@ -362,24 +373,35 @@
         Authors: Arsen, Angelina <br />Group: MCS-2301
       </div>
     </div>
-    <script>
-      var acc = document.getElementsByClassName("collapsible");
-      var i;
-
-      for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-          this.classList.toggle("active");
-          this.parentElement.classList.toggle("active");
-
-          var panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
-          } else {
-            panel.style.display = "block";
-          }
-        });
-      }
-    </script>
-    <script src="../scripts/servicesScript.js"></script>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    var acc = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        this.parentElement.classList.toggle("active");
+
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+  </script>
+  <script src="../scripts/servicesScript.js"></script>
 </html>
