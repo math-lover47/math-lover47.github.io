@@ -11,8 +11,8 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../styles/homeStyle.css" />
     <link rel="stylesheet" href="../styles/generalStyles.css" />
+    <link rel="stylesheet" href="../styles/homeStyle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -84,16 +84,80 @@
             </h1>
             <p>We help children grow up stronger.</p>
           </div>
-          <a href="services.html">
-            <button class="btn btn-success btn-lg" type="button">
-              Consultation
-            </button>
-          </a>
-          <a href="home.html#programsForKids">
-            <button class="btn btn-success btn-lg" type="button">
-              Explore
-            </button>
-          </a>
+          <button
+            id="consultationBtn"
+            class="btn btn-success btn-lg"
+            type="button"
+          >
+            Consultation
+          </button>
+          <div class="modal-overlay">
+            <div class="consultation-options">
+              <button class="btn btn-light m-2" id="quickConsultBtn">
+                Quick Consultation
+              </button>
+              <button class="btn btn-light m-2" id="appointmentBtn">
+                Appoint Consultation
+              </button>
+            </div>
+
+            <div class="symptomsContainer">
+              <h3>Symptom checker</h3>
+              <form id="symptomsForm">
+                <div class="mb-3">
+                  <label for="symptoms" class="form-label">
+                    Select Symptoms:</label
+                  >
+                  <select multiple class="form-select" id="symptoms">
+                    <option value="headache">Headache</option>
+                    <option value="jointPain">Joint Pain</option>
+                    <option value="backPain">Back Pain</option>
+                    <option value="mobility">Reduced Mobility</option>
+                    <option value="coordination">Poor Coordination</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-success mt-3">
+                  Get Recommendations
+                </button>
+              </form>
+              <div id="recommendations" class="mt-3"></div>
+            </div>
+
+            <div class="appointmentContainer">
+              <h3>Book appointment</h3>
+              <form action="" id="appointmentForm">
+                <div class="mb-3">
+                  <label for="doctor" class="form-label">
+                    Select Doctor:
+                  </label>
+                  <select class="form-select" id="doctor" required>
+                    <option value="dr1">
+                      Dr. Alibek - Pediatric Specialist
+                    </option>
+                    <option value="dr2">
+                      Dr. Jansaya - Physical Therapist
+                    </option>
+                    <option value="dr3">Dr. Ali - Rehabilitation Expert</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="appointmentDate">Select Date:</label>
+                  <input
+                    type="date"
+                    id="appointmentDate"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div id="timeSlots" class="mb-3"></div>
+                <button type="submit" class="btn btn-success mt-3">
+                  Book appointment
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -128,6 +192,61 @@
               </h3>
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+    <div id="pricingTable">
+      <div class="container">
+        <div class="container text-center fw-bold my-5">
+          <h1>Pricing Table</h1>
+          <div id="tableContainer" class="my-5">
+            <div class="column standardContainer">
+              <img src="../images/program/kyle.jpeg" alt="kyle" class="my-5" />
+              <h4 class="fw-bold">Standard</h4>
+              <h5>5000tg/year</h5>
+              <ul>
+                <li>Access to basic rehabilitation resources</li>
+                <li>Monthly webinars on child rehabilitation techniques</li>
+                <li>Community support forum access</li>
+                <li>10% discount on rehabilitation workshops</li>
+              </ul>
+              <button class="planBtn my-3" id="standardBtn">
+                Standard Plan
+              </button>
+            </div>
+            <div class="column premiumContainer">
+              <img src="../images/program/stan.jpeg" alt="stan" class="my-5" />
+              <h4 class="fw-bold">Premium</h4>
+              <h5>9000tg/year</h5>
+              <ul>
+                <li>All Standard Membership features</li>
+                <li>
+                  Full access to advanced rehabilitation guides and videos
+                </li>
+                <li>Early access to new rehabilitation programs</li>
+                <li>25% discount on all workshops and conferences</li>
+                <li>One free consultation session per quarter</li>
+              </ul>
+              <button class="planBtn my-5" id="premiumBtn">Premium Plan</button>
+            </div>
+            <div class="column vipContainer">
+              <img
+                src="../images/program/cartman.jpeg"
+                alt="cartman"
+                class="my-5"
+              />
+              <h4 class="fw-bold">VIP</h4>
+              <h5>15000tg/year</h5>
+              <ul>
+                <li>All Premium Membership features</li>
+                <li>Personalized rehabilitation plan for your child</li>
+                <li>Unlimited consultation sessions</li>
+                <li>Exclusive access to VIP-only webinars and events</li>
+                <li>50% discount on all workshops and conferences</li>
+              </ul>
+              <button class="planBtn my-5" id="vipBtn">VIP Plan</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -602,18 +721,18 @@
         Authors: Arsen, Angelina <br />Group: MCS-2301
       </div>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../scripts/homeScript.js"></script>
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </html>

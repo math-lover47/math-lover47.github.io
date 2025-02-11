@@ -114,3 +114,129 @@
   color: #fff;
   cursor: pointer;
 }
+#tableContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+.column img {
+  height: 300px;
+}
+.standardContainer h4,
+.standardContainer h5 {
+  color: #1b5e3a;
+}
+#standardBtn {
+  background-color: #1b5e3a;
+  color: #fff;
+}
+#standardBtn:hover {
+  background-color: hsl(148, 55%, 34%);
+}
+#standardBtn:active {
+  background-color: hsl(148, 55%, 44%);
+}
+.premiumContainer h4,
+.premiumContainer h5 {
+  color: darkblue;
+}
+#premiumBtn {
+  background-color: darkblue;
+  color: #fff;
+}
+#premiumBtn:hover {
+  background-color: hsl(240, 100%, 57%);
+}
+#premiumBtn:active {
+  background-color: hsl(240, 100%, 67%);
+}
+.vipContainer h4,
+.vipContainer h5 {
+  color: tomato;
+}
+#vipBtn {
+  background-color: hsl(9, 100%, 40%);
+  color: #fff;
+}
+#vipBtn:hover {
+  background-color: hsl(9, 100%, 50%);
+}
+#vipBtn:active {
+  background-color: hsl(9, 100%, 60%);
+}
+.planBtn {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  min-width: 180px;
+  border: none;
+  font-weight: bold;
+}
+/* consultation */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+.consultation-options {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.symptomsContainer,
+.appointmentContainer {
+  display: none;
+  background: hsl(155, 46%, 54%);
+  color: #000;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  max-width: 30rem;
+  margin: 10rem auto;
+}
+
+.time-slot {
+  margin: 0.2rem;
+  padding: 0.4rem;
+  border: 1px, solid, black;
+  cursor: pointer;
+}
+.time-slot.booked {
+  background-color: #ffebee;
+  cursor: not-allowed;
+}
+.time-slot.selected {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+}
+/* font for regular text */
+@font-face {
+  font-family: "plans";
+  src: url(../fonts/Merriweather/Merriweather-LightItalic.ttf);
+}
+#tableContainer ul {
+  text-align: left;
+  font-family: plans;
+}
+#tableContainer li {
+  margin-top: 1rem;
+  padding: 0 1.5rem;
+}
+/* medium devices */
+@media (max-width: 992px) {
+  #tableContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  @media (max-width: 768px) {
+    #tableContainer {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+}
